@@ -22,10 +22,16 @@ $(document).ready(function() {
 
     // для открытия модалки нужна ссылка вида <a href="#name"></a> и класс "open_modal"
     // будет открыта модалка с id="name"
+
+    var savePos;
+
     open_modal.click( function(event){
+        savePos = $('html, body').scrollTop();
+        
         modal.fadeOut(200);
         event.preventDefault(); 
         var div = $(this).attr('href'); 
+        
         overlay.fadeIn(400);
         $(div).fadeIn(400);
         $('html, body').addClass('j-noScroll');
@@ -36,6 +42,7 @@ $(document).ready(function() {
         modal.fadeOut(200);
         overlay.fadeOut(200);
         $('html, body').removeClass('j-noScroll');
+        $('html, body').scrollTop(savePos);
     });
 
     overlay.click(function(event) {
@@ -43,6 +50,7 @@ $(document).ready(function() {
             $(this).fadeOut(200);
             modal.fadeOut(200);
             $('html, body').removeClass('j-noScroll');
+            $('html, body').scrollTop(savePos);
         }
     });
 

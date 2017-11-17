@@ -32,12 +32,28 @@ $(document).ready(function() {
 
     $('body').click(function() {
         $('.adress-list').slideUp();
+        $('.calendar-club-list').slideUp();
     });
+
+    $('.calendar-club').on('click', function(e) {
+        e.stopPropagation();
+        $(this).toggleClass('open').find('.calendar-club-list').slideToggle();
+    });
+
+    $('.calendar-club-list a').on('click', function(e) {
+        e.stopPropagation();
+        $('.calendar-club-list').slideUp();
+
+        
+    });
+
+
 
     var galleryTop = new Swiper('.gallery-top', {
         slidesPerView: 'auto',
         spaceBetween: 2
     });
+
     var galleryThumbs = new Swiper('.gallery-thumbs', {
       spaceBetween: 2,
       slidesPerView: 'auto',
@@ -61,5 +77,14 @@ $(document).ready(function() {
             $('.gallery-thumbs .swiper-slide').eq(idx).addClass('active');
         });
     }
+
+    var calendarList = new Swiper('.calendar-days', {
+        slidesPerView: 'auto',
+        spaceBetween: 1,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 
 });
