@@ -1,0 +1,462 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@calendar-arrow-name: 'calendar-arrow';
+@calendar-arrow-x: 260px;
+@calendar-arrow-y: 185px;
+@calendar-arrow-offset-x: -260px;
+@calendar-arrow-offset-y: -185px;
+@calendar-arrow-width: 17px;
+@calendar-arrow-height: 16px;
+@calendar-arrow-total-width: 317px;
+@calendar-arrow-total-height: 243px;
+@calendar-arrow-image: '../img/sprite.png';
+@calendar-arrow: 260px 185px -260px -185px 17px 16px 317px 243px '../img/sprite.png' 'calendar-arrow';
+@calendar-order-a-name: 'calendar-order-a';
+@calendar-order-a-x: 277px;
+@calendar-order-a-y: 0px;
+@calendar-order-a-offset-x: -277px;
+@calendar-order-a-offset-y: 0px;
+@calendar-order-a-width: 40px;
+@calendar-order-a-height: 40px;
+@calendar-order-a-total-width: 317px;
+@calendar-order-a-total-height: 243px;
+@calendar-order-a-image: '../img/sprite.png';
+@calendar-order-a: 277px 0px -277px 0px 40px 40px 317px 243px '../img/sprite.png' 'calendar-order-a';
+@calendar-order-name: 'calendar-order';
+@calendar-order-x: 277px;
+@calendar-order-y: 40px;
+@calendar-order-offset-x: -277px;
+@calendar-order-offset-y: -40px;
+@calendar-order-width: 40px;
+@calendar-order-height: 40px;
+@calendar-order-total-width: 317px;
+@calendar-order-total-height: 243px;
+@calendar-order-image: '../img/sprite.png';
+@calendar-order: 277px 40px -277px -40px 40px 40px 317px 243px '../img/sprite.png' 'calendar-order';
+@calendar-pay-a-name: 'calendar-pay-a';
+@calendar-pay-a-x: 277px;
+@calendar-pay-a-y: 120px;
+@calendar-pay-a-offset-x: -277px;
+@calendar-pay-a-offset-y: -120px;
+@calendar-pay-a-width: 40px;
+@calendar-pay-a-height: 40px;
+@calendar-pay-a-total-width: 317px;
+@calendar-pay-a-total-height: 243px;
+@calendar-pay-a-image: '../img/sprite.png';
+@calendar-pay-a: 277px 120px -277px -120px 40px 40px 317px 243px '../img/sprite.png' 'calendar-pay-a';
+@calendar-pay-name: 'calendar-pay';
+@calendar-pay-x: 277px;
+@calendar-pay-y: 200px;
+@calendar-pay-offset-x: -277px;
+@calendar-pay-offset-y: -200px;
+@calendar-pay-width: 40px;
+@calendar-pay-height: 40px;
+@calendar-pay-total-width: 317px;
+@calendar-pay-total-height: 243px;
+@calendar-pay-image: '../img/sprite.png';
+@calendar-pay: 277px 200px -277px -200px 40px 40px 317px 243px '../img/sprite.png' 'calendar-pay';
+@card-name: 'card';
+@card-x: 0px;
+@card-y: 0px;
+@card-offset-x: 0px;
+@card-offset-y: 0px;
+@card-width: 80px;
+@card-height: 56px;
+@card-total-width: 317px;
+@card-total-height: 243px;
+@card-image: '../img/sprite.png';
+@card: 0px 0px 0px 0px 80px 56px 317px 243px '../img/sprite.png' 'card';
+@close-name: 'close';
+@close-x: 277px;
+@close-y: 160px;
+@close-offset-x: -277px;
+@close-offset-y: -160px;
+@close-width: 40px;
+@close-height: 40px;
+@close-total-width: 317px;
+@close-total-height: 243px;
+@close-image: '../img/sprite.png';
+@close: 277px 160px -277px -160px 40px 40px 317px 243px '../img/sprite.png' 'close';
+@facebook-h-name: 'facebook-h';
+@facebook-h-x: 240px;
+@facebook-h-y: 100px;
+@facebook-h-offset-x: -240px;
+@facebook-h-offset-y: -100px;
+@facebook-h-width: 27px;
+@facebook-h-height: 51px;
+@facebook-h-total-width: 317px;
+@facebook-h-total-height: 243px;
+@facebook-h-image: '../img/sprite.png';
+@facebook-h: 240px 100px -240px -100px 27px 51px 317px 243px '../img/sprite.png' 'facebook-h';
+@facebook-name: 'facebook';
+@facebook-x: 240px;
+@facebook-y: 49px;
+@facebook-offset-x: -240px;
+@facebook-offset-y: -49px;
+@facebook-width: 27px;
+@facebook-height: 51px;
+@facebook-total-width: 317px;
+@facebook-total-height: 243px;
+@facebook-image: '../img/sprite.png';
+@facebook: 240px 49px -240px -49px 27px 51px 317px 243px '../img/sprite.png' 'facebook';
+@grup-a-name: 'grup-a';
+@grup-a-x: 60px;
+@grup-a-y: 127px;
+@grup-a-offset-x: -60px;
+@grup-a-offset-y: -127px;
+@grup-a-width: 60px;
+@grup-a-height: 42px;
+@grup-a-total-width: 317px;
+@grup-a-total-height: 243px;
+@grup-a-image: '../img/sprite.png';
+@grup-a: 60px 127px -60px -127px 60px 42px 317px 243px '../img/sprite.png' 'grup-a';
+@grup-h-name: 'grup-h';
+@grup-h-x: 120px;
+@grup-h-y: 127px;
+@grup-h-offset-x: -120px;
+@grup-h-offset-y: -127px;
+@grup-h-width: 60px;
+@grup-h-height: 42px;
+@grup-h-total-width: 317px;
+@grup-h-total-height: 243px;
+@grup-h-image: '../img/sprite.png';
+@grup-h: 120px 127px -120px -127px 60px 42px 317px 243px '../img/sprite.png' 'grup-h';
+@grup-name: 'grup';
+@grup-x: 0px;
+@grup-y: 127px;
+@grup-offset-x: 0px;
+@grup-offset-y: -127px;
+@grup-width: 60px;
+@grup-height: 42px;
+@grup-total-width: 317px;
+@grup-total-height: 243px;
+@grup-image: '../img/sprite.png';
+@grup: 0px 127px 0px -127px 60px 42px 317px 243px '../img/sprite.png' 'grup';
+@instagram-h-name: 'instagram-h';
+@instagram-h-x: 188px;
+@instagram-h-y: 97px;
+@instagram-h-offset-x: -188px;
+@instagram-h-offset-y: -97px;
+@instagram-h-width: 49px;
+@instagram-h-height: 49px;
+@instagram-h-total-width: 317px;
+@instagram-h-total-height: 243px;
+@instagram-h-image: '../img/sprite.png';
+@instagram-h: 188px 97px -188px -97px 49px 49px 317px 243px '../img/sprite.png' 'instagram-h';
+@instagram-name: 'instagram';
+@instagram-x: 188px;
+@instagram-y: 48px;
+@instagram-offset-x: -188px;
+@instagram-offset-y: -48px;
+@instagram-width: 49px;
+@instagram-height: 49px;
+@instagram-total-width: 317px;
+@instagram-total-height: 243px;
+@instagram-image: '../img/sprite.png';
+@instagram: 188px 48px -188px -48px 49px 49px 317px 243px '../img/sprite.png' 'instagram';
+@kids-a-name: 'kids-a';
+@kids-a-x: 0px;
+@kids-a-y: 169px;
+@kids-a-offset-x: 0px;
+@kids-a-offset-y: -169px;
+@kids-a-width: 48px;
+@kids-a-height: 42px;
+@kids-a-total-width: 317px;
+@kids-a-total-height: 243px;
+@kids-a-image: '../img/sprite.png';
+@kids-a: 0px 169px 0px -169px 48px 42px 317px 243px '../img/sprite.png' 'kids-a';
+@kids-h-name: 'kids-h';
+@kids-h-x: 48px;
+@kids-h-y: 169px;
+@kids-h-offset-x: -48px;
+@kids-h-offset-y: -169px;
+@kids-h-width: 48px;
+@kids-h-height: 42px;
+@kids-h-total-width: 317px;
+@kids-h-total-height: 243px;
+@kids-h-image: '../img/sprite.png';
+@kids-h: 48px 169px -48px -169px 48px 42px 317px 243px '../img/sprite.png' 'kids-h';
+@kids-name: 'kids';
+@kids-x: 96px;
+@kids-y: 169px;
+@kids-offset-x: -96px;
+@kids-offset-y: -169px;
+@kids-width: 48px;
+@kids-height: 42px;
+@kids-total-width: 317px;
+@kids-total-height: 243px;
+@kids-image: '../img/sprite.png';
+@kids: 96px 169px -96px -169px 48px 42px 317px 243px '../img/sprite.png' 'kids';
+@menu-arrow-name: 'menu-arrow';
+@menu-arrow-x: 240px;
+@menu-arrow-y: 185px;
+@menu-arrow-offset-x: -240px;
+@menu-arrow-offset-y: -185px;
+@menu-arrow-width: 20px;
+@menu-arrow-height: 18px;
+@menu-arrow-total-width: 317px;
+@menu-arrow-total-height: 243px;
+@menu-arrow-image: '../img/sprite.png';
+@menu-arrow: 240px 185px -240px -185px 20px 18px 317px 243px '../img/sprite.png' 'menu-arrow';
+@menu-close-name: 'menu-close';
+@menu-close-x: 277px;
+@menu-close-y: 80px;
+@menu-close-offset-x: -277px;
+@menu-close-offset-y: -80px;
+@menu-close-width: 40px;
+@menu-close-height: 40px;
+@menu-close-total-width: 317px;
+@menu-close-total-height: 243px;
+@menu-close-image: '../img/sprite.png';
+@menu-close: 277px 80px -277px -80px 40px 40px 317px 243px '../img/sprite.png' 'menu-close';
+@menu-more-name: 'menu-more';
+@menu-more-x: 204px;
+@menu-more-y: 146px;
+@menu-more-offset-x: -204px;
+@menu-more-offset-y: -146px;
+@menu-more-width: 16px;
+@menu-more-height: 16px;
+@menu-more-total-width: 317px;
+@menu-more-total-height: 243px;
+@menu-more-image: '../img/sprite.png';
+@menu-more: 204px 146px -204px -146px 16px 16px 317px 243px '../img/sprite.png' 'menu-more';
+@menu-name: 'menu';
+@menu-x: 188px;
+@menu-y: 0px;
+@menu-offset-x: -188px;
+@menu-offset-y: 0px;
+@menu-width: 52px;
+@menu-height: 48px;
+@menu-total-width: 317px;
+@menu-total-height: 243px;
+@menu-image: '../img/sprite.png';
+@menu: 188px 0px -188px 0px 52px 48px 317px 243px '../img/sprite.png' 'menu';
+@phone-name: 'phone';
+@phone-x: 240px;
+@phone-y: 151px;
+@phone-offset-x: -240px;
+@phone-offset-y: -151px;
+@phone-width: 31px;
+@phone-height: 34px;
+@phone-total-width: 317px;
+@phone-total-height: 243px;
+@phone-image: '../img/sprite.png';
+@phone: 240px 151px -240px -151px 31px 34px 317px 243px '../img/sprite.png' 'phone';
+@place-head-name: 'place-head';
+@place-head-x: 0px;
+@place-head-y: 56px;
+@place-head-offset-x: 0px;
+@place-head-offset-y: -56px;
+@place-head-width: 54px;
+@place-head-height: 71px;
+@place-head-total-width: 317px;
+@place-head-total-height: 243px;
+@place-head-image: '../img/sprite.png';
+@place-head: 0px 56px 0px -56px 54px 71px 317px 243px '../img/sprite.png' 'place-head';
+@place-name: 'place';
+@place-x: 240px;
+@place-y: 0px;
+@place-offset-x: -240px;
+@place-offset-y: 0px;
+@place-width: 37px;
+@place-height: 49px;
+@place-total-width: 317px;
+@place-total-height: 243px;
+@place-image: '../img/sprite.png';
+@place: 240px 0px -240px 0px 37px 49px 317px 243px '../img/sprite.png' 'place';
+@sm-name: 'sm';
+@sm-x: 188px;
+@sm-y: 146px;
+@sm-offset-x: -188px;
+@sm-offset-y: -146px;
+@sm-width: 16px;
+@sm-height: 16px;
+@sm-total-width: 317px;
+@sm-total-height: 243px;
+@sm-image: '../img/sprite.png';
+@sm: 188px 146px -188px -146px 16px 16px 317px 243px '../img/sprite.png' 'sm';
+@tel-name: 'tel';
+@tel-x: 80px;
+@tel-y: 0px;
+@tel-offset-x: -80px;
+@tel-offset-y: 0px;
+@tel-width: 56px;
+@tel-height: 60px;
+@tel-total-width: 317px;
+@tel-total-height: 243px;
+@tel-image: '../img/sprite.png';
+@tel: 80px 0px -80px 0px 56px 60px 317px 243px '../img/sprite.png' 'tel';
+@time-a-name: 'time-a';
+@time-a-x: 136px;
+@time-a-y: 0px;
+@time-a-offset-x: -136px;
+@time-a-offset-y: 0px;
+@time-a-width: 52px;
+@time-a-height: 52px;
+@time-a-total-width: 317px;
+@time-a-total-height: 243px;
+@time-a-image: '../img/sprite.png';
+@time-a: 136px 0px -136px 0px 52px 52px 317px 243px '../img/sprite.png' 'time-a';
+@time-h-name: 'time-h';
+@time-h-x: 80px;
+@time-h-y: 60px;
+@time-h-offset-x: -80px;
+@time-h-offset-y: -60px;
+@time-h-width: 52px;
+@time-h-height: 52px;
+@time-h-total-width: 317px;
+@time-h-total-height: 243px;
+@time-h-image: '../img/sprite.png';
+@time-h: 80px 60px -80px -60px 52px 52px 317px 243px '../img/sprite.png' 'time-h';
+@time-name: 'time';
+@time-x: 136px;
+@time-y: 52px;
+@time-offset-x: -136px;
+@time-offset-y: -52px;
+@time-width: 52px;
+@time-height: 52px;
+@time-total-width: 317px;
+@time-total-height: 243px;
+@time-image: '../img/sprite.png';
+@time: 136px 52px -136px -52px 52px 52px 317px 243px '../img/sprite.png' 'time';
+@vk-h-name: 'vk-h';
+@vk-h-x: 158px;
+@vk-h-y: 211px;
+@vk-h-offset-x: -158px;
+@vk-h-offset-y: -211px;
+@vk-h-width: 54px;
+@vk-h-height: 30px;
+@vk-h-total-width: 317px;
+@vk-h-total-height: 243px;
+@vk-h-image: '../img/sprite.png';
+@vk-h: 158px 211px -158px -211px 54px 30px 317px 243px '../img/sprite.png' 'vk-h';
+@vk-name: 'vk';
+@vk-x: 104px;
+@vk-y: 211px;
+@vk-offset-x: -104px;
+@vk-offset-y: -211px;
+@vk-width: 54px;
+@vk-height: 30px;
+@vk-total-width: 317px;
+@vk-total-height: 243px;
+@vk-image: '../img/sprite.png';
+@vk: 104px 211px -104px -211px 54px 30px 317px 243px '../img/sprite.png' 'vk';
+@water-a-name: 'water-a';
+@water-a-x: 0px;
+@water-a-y: 211px;
+@water-a-offset-x: 0px;
+@water-a-offset-y: -211px;
+@water-a-width: 52px;
+@water-a-height: 32px;
+@water-a-total-width: 317px;
+@water-a-total-height: 243px;
+@water-a-image: '../img/sprite.png';
+@water-a: 0px 211px 0px -211px 52px 32px 317px 243px '../img/sprite.png' 'water-a';
+@water-h-name: 'water-h';
+@water-h-x: 52px;
+@water-h-y: 211px;
+@water-h-offset-x: -52px;
+@water-h-offset-y: -211px;
+@water-h-width: 52px;
+@water-h-height: 32px;
+@water-h-total-width: 317px;
+@water-h-total-height: 243px;
+@water-h-image: '../img/sprite.png';
+@water-h: 52px 211px -52px -211px 52px 32px 317px 243px '../img/sprite.png' 'water-h';
+@water-name: 'water';
+@water-x: 144px;
+@water-y: 169px;
+@water-offset-x: -144px;
+@water-offset-y: -169px;
+@water-width: 52px;
+@water-height: 32px;
+@water-total-width: 317px;
+@water-total-height: 243px;
+@water-image: '../img/sprite.png';
+@water: 144px 169px -144px -169px 52px 32px 317px 243px '../img/sprite.png' 'water';
+@spritesheet-width: 317px;
+@spritesheet-height: 243px;
+@spritesheet-image: '../img/sprite.png';
+@spritesheet-sprites: @calendar-arrow @calendar-order-a @calendar-order @calendar-pay-a @calendar-pay @card @close @facebook-h @facebook @grup-a @grup-h @grup @instagram-h @instagram @kids-a @kids-h @kids @menu-arrow @menu-close @menu-more @menu @phone @place-head @place @sm @tel @time-a @time-h @time @vk-h @vk @water-a @water-h @water;
+@spritesheet: 317px 243px '../img/sprite.png' @spritesheet-sprites;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}

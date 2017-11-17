@@ -1,0 +1,89 @@
+<div class="adress">
+    <div class="adress-title">
+        <div class="adress-title__top">адреса клубов</div>
+        <div class="adress-title__bottom">Fresh Fitness</div>
+    </div>
+
+    <div class="adress-link">
+        <a href="#" class="active" data-coord="56.84760156785421,60.62252850000001">ул. Бажова, 68</a>
+        <a href="#" data-coord="56.833171067847324,60.56942900000001">ул. Мельникова, 27</a>
+    </div>
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map('map', {
+                    center: [56.84760156785421,60.62252850000001],
+                    zoom: 16,
+                    controls: []
+                }, {
+                }),
+             
+
+                place1 = new ymaps.Placemark([
+                    56.84760156785421,60.62252850000001
+                    ], {
+                    iconCaption: 'ул. Бажова, 68'
+                }, {
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/map.png',
+                    iconImageSize: [40, 54],
+                    iconImageOffset: [-20, -54]
+                });
+
+                place2 = new ymaps.Placemark([
+                    56.833171067847324,60.56942900000001
+                    ], {
+                    iconCaption: 'ул. Мельникова, 27'
+                }, {
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/map.png',
+                    iconImageSize: [40, 54],
+                    iconImageOffset: [-20, -54]
+                });
+
+            myMap.geoObjects.add(place1);
+            myMap.geoObjects.add(place2);
+
+            myMap.behaviors.disable('scrollZoom');
+            
+            $(document).ready(function() {
+                $('.adress-link a').on('click', function() {
+                    $('.adress-link a').removeClass('active');
+                    $(this).addClass('active');
+
+                    var thisCoord = $(this).data('coord').split(",");
+                    myMap.setCenter(thisCoord);
+
+                    var idx = $(this).index();
+                    console.log(idx);
+                    $('.adress-block').hide()
+                    $('.adress-block').eq(idx).show();
+
+                    return false;
+                });
+            });
+        }); 
+
+    </script>
+
+    <div class="map" id="map"></div>
+    <div class="adress-blocks">
+        <div class="adress-block" style="display: block;">
+            <div class="adress-block__title">Екатеринбург, ул. Бажова, 68</div>
+            <div class="adress-block-cols">
+                <div class="adress-block__col"><span>Пн-Пт</span> 7:00 - 23:00, <span>Сб-Вс</span> 8:00 - 22:00</div>
+                <div class="adress-block__col"><span>Т.:</span> +7 (343) 278-84-82</div>
+                <div class="adress-block__col"><span>@:</span> <a href="#">fresh_fitness@mail.ru</a></div>
+            </div>
+        </div>
+        <div class="adress-block">
+            <div class="adress-block__title">Екатеринбург, ул. Мельникова, 27</div>
+            <div class="adress-block-cols">
+                <div class="adress-block__col"><span>Пн-Пт</span> 7:00 - 23:00, <span>Сб-Вс</span> 8:00 - 22:00</div>
+                <div class="adress-block__col"><span>Т.:</span> +7 (343) 278-84-82</div>
+                <div class="adress-block__col"><span>@:</span> <a href="#">fresh_fitness@mail.ru</a></div>
+            </div>
+        </div>
+    </div>
+</div>
