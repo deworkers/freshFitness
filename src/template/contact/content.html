@@ -1,0 +1,137 @@
+<article class="content">
+    <div class="wrap content-inn">
+        <h1 class="content__title">Контакты</h1>
+            
+        <div class="breadcrumbs">
+            <a class="breadcrumbs__link" href="#">Главная</a> / <span>Контакты</span>
+        </div>
+
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+        <script type="text/javascript">
+            ymaps.ready(function () {
+                var myMap1 = new ymaps.Map('map1', {
+                        center: [56.84760156785421,60.62252850000001],
+                        zoom: 16,
+                        controls: []
+                    }, {
+                    }),
+                 
+
+                    place1 = new ymaps.Placemark([
+                        56.84760156785421,60.62252850000001
+                        ], {
+                        iconCaption: 'ул. Бажова, 68'
+                    }, {
+                        iconLayout: 'default#image',
+                        iconImageHref: 'img/map.png',
+                        iconImageSize: [40, 54],
+                        iconImageOffset: [-20, -54]
+                    });
+
+
+                var myMap2 = new ymaps.Map('map2', {
+                        center: [56.833171067847324,60.56942900000001],
+                        zoom: 16,
+                        controls: []
+                    }, {
+                    }),
+
+                    place2 = new ymaps.Placemark([
+                        56.833171067847324,60.56942900000001
+                        ], {
+                        iconCaption: 'ул. Мельникова, 27'
+                    }, {
+                        iconLayout: 'default#image',
+                        iconImageHref: 'img/map.png',
+                        iconImageSize: [40, 54],
+                        iconImageOffset: [-20, -54]
+                    });
+
+                    myMap1.geoObjects.add(place1);
+                    myMap2.geoObjects.add(place2);
+
+                    myMap1.behaviors.disable('scrollZoom');
+                    myMap2.behaviors.disable('scrollZoom');
+                
+            }); 
+        </script>
+        
+        <div class="contact">
+            <div class="contact-one">
+                <div class="contact-one-block">
+                    <div class="contact-one__top">Клуб №1</div>
+                    <div class="contact-one__title">Екатеринбург,
+                    ул. Бажова, 68</div>
+                    
+                    <div class="contact-line">
+                        <div class="contact-col">
+                            <span>Часы работы:</span><br>
+                            <span>Пн-Пт</span> 7:00 - 23:00 <br class="hideme">
+                            <span>Сб-Вс</span> 8:00 - 22:00
+                        </div>
+                        <div class="contact-col">
+                            <span>Контакты:</span><br>
+                            <span>Т.:</span> +7 (343) 278-84-82 <br>
+                            <span>@:</span> <a href="#">fresh_fitness@mail.ru</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map" id="map1"></div>
+            </div>
+            <div class="contact-one">
+                <div class="contact-one-block">
+                    <div class="contact-one__top">Клуб №2</div>
+                    <div class="contact-one__title">Екатеринбург,
+                    ул. Мельникова, 27</div>
+                    
+                    <div class="contact-line">
+                        <div class="contact-col">
+                            <span>Часы работы:</span><br>
+                            <span>Пн-Пт</span> 7:00 - 23:00<br>
+                            <span>Сб-Вс</span> 8:00 - 22:00
+                        </div>
+                        <div class="contact-col">
+                            <span>Контакты:</span><br>
+                            <span>Т.:</span> +7 (343) 278-84-82 <br>
+                            <span>@:</span> <a href="#">fresh_fitness@mail.ru</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map" id="map2"></div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <div class="contact-form">
+        <div class="contact-form-inn">
+            <div class="contact-form__title">Свяжитесь с нами</div>
+            <form action="" id="contact-form">
+                <div class="form-line">
+                    <div class="form-col">
+                        <input type="text" name="name" placeholder="Ваше имя">
+                    </div>
+                    <div class="form-col">
+                        <input type="text" name="phone" placeholder="Ваш телефон">
+                    </div>
+                </div>
+                <div class="form-line">
+                    <textarea name="message" placeholder="Сообщение"></textarea>
+                </div>
+                <div class="form-line">
+                    <div class="form-col qapctha">
+                        <img src="tmp/qapctha.jpg" alt="">
+                        <input type="text" placeholder="Текст с картинки">
+                    </div>
+                    <div class="form-col">
+                        <button class="contact-form__button">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+        
+</article>

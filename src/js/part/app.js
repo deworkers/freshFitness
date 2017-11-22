@@ -37,14 +37,23 @@ $(document).ready(function() {
 
     $('.calendar-club').on('click', function(e) {
         e.stopPropagation();
-        $(this).toggleClass('open').find('.calendar-club-list').slideToggle();
+        $(this).addClass('open').find('.calendar-club-list').slideToggle();
     });
 
-    $('.calendar-club-list a').on('click', function(e) {
+    $('.calendar-club-list label').on('click', function(e) {
         e.stopPropagation();
         $('.calendar-club-list').slideUp();
 
-        
+        var icon = $(this).data('icon');
+        var iconClass = 'filtr-icon--' + icon;
+        if ( icon !== undefined ) {
+            $(this).parents('.calendar-club').find('span').removeClass();
+            $(this).parents('.calendar-club').find('span').addClass('filtr-icon').addClass(iconClass);
+        }
+
+        var title = $(this).text();
+        $(this).parents('.calendar-club').find('span').html(title+'<i></i>');
+
     });
 
 
@@ -70,7 +79,7 @@ $(document).ready(function() {
     });
 
     if ( $('.gallery-top').length > 0 ) {
-        galleryTop.on('onSlideChangeEnd', function () {
+        galleryTop.on('slideChangeTransitionEnd', function () {
             var idx = galleryTop.activeIndex;
             galleryThumbs.slideTo(idx, 300);
             $('.gallery-thumbs .swiper-slide').removeClass('active');
@@ -87,8 +96,24 @@ $(document).ready(function() {
         },
     });
 
+    $.extend(true, $.magnificPopup.defaults, {
+        tClose: 'Закрыть (Esc)', // Alt text on close button
+          tLoading: 'Загрузка...', // Text that is displayed during loading. Can contain %curr% and %total% keys
+          gallery: {
+            tPrev: 'Назад', // Alt text on left arrow
+            tNext: 'Вперед', // Alt text on right arrow
+            tCounter: '%curr% / %total%' // Markup for "1 of 7" counter
+          },
+          image: {
+            tError: '<a href="%url%">The image</a> could not be loaded.' // Error message when image could not be loaded
+          },
+          ajax: {
+            tError: '<a href="%url%">The content</a> could not be loaded.' // Error message when ajax request failed
+          }
+    });
 
-    $('.review').magnificPopup({
+
+    $('.person-photo').magnificPopup({
         delegate: 'a',
         type: 'image',
         closeOnContentClick: false,
@@ -110,7 +135,118 @@ $(document).ready(function() {
                 return element.find('img');
             }
         }
-        
+    });
+
+    $('.review, .gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        closeOnContentClick: false,
+        closeBtnInside: false,
+        mainClass: 'mfp-with-zoom mfp-img-mobile',
+        image: {
+            verticalFit: true,
+            titleSrc: function(item) {
+                return item.el.attr('title');
+            }
+        },
+        gallery: {
+            enabled: true
+        },
+        zoom: {
+            enabled: true,
+            duration: 300, // don't foget to change the duration also in CSS
+            opener: function(element) {
+                return element.find('img');
+            }
+        }
+    });
+
+
+    $('.calendar-type-one').on('click', function() {
+        $('.calendar-type-one').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $('.category-list label').on('click', function() {
+        $('.category-list label').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    if ( $(window).width() >= 1024 ) {
+        $('.grid').masonry({
+            columnWidth: 145,
+            itemSelector: '.grid-item',
+            gutter: 10
+        });
+    } else {
+        var person = new Swiper('.person-img', {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            centeredSlides: true
+        });
+    }
+
+
+
+    $("#orderForm").validate({
+       rules:{
+            name:{
+                required: true
+            },
+            phone:{
+                required: true
+            }
+       },
+
+       messages:{
+            name:{
+                required: "Поле обязательное для заполнения",
+            },
+            phone:{
+                required: "Поле обязательное для заполнения",
+            }
+       }
+    });
+
+    $("#order-form").validate({
+       rules:{
+            name:{
+                required: true
+            },
+            phone:{
+                required: true
+            }
+       },
+
+       messages:{
+            name:{
+                required: "Поле обязательное для заполнения",
+            },
+            phone:{
+                required: "Поле обязательное для заполнения",
+            }
+       }
+    });
+
+    $("#contact-form").validate({
+       rules:{
+            name:{
+                required: true
+            },
+            phone:{
+                required: true
+            }
+       },
+
+       messages:{
+            name:{
+                required: "Поле обязательное для заполнения",
+            },
+            phone:{
+                required: "Поле обязательное для заполнения",
+            }
+       }
     });
 
 });
+

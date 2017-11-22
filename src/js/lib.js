@@ -7,3 +7,4 @@
 //= ../plugin/swiper/js/swiper.min.js
 //= ../plugin/jquery.validate.min.js
 //= ../plugin/magnific-popup/jquery.magnific-popup.min.js
+//= ../plugin/masonry.pkgd.min.js
