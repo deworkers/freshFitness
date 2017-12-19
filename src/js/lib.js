@@ -8,3 +8,4 @@
 //= ../plugin/jquery.validate.min.js
 //= ../plugin/magnific-popup/jquery.magnific-popup.min.js
 //= ../plugin/masonry.pkgd.min.js
+//= ../plugin/jquery.maskedinput.min.js

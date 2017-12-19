@@ -188,26 +188,6 @@ $(document).ready(function() {
 
 
 
-    $("#orderForm").validate({
-       rules:{
-            name:{
-                required: true
-            },
-            phone:{
-                required: true
-            }
-       },
-
-       messages:{
-            name:{
-                required: "Поле обязательное для заполнения",
-            },
-            phone:{
-                required: "Поле обязательное для заполнения",
-            }
-       }
-    });
-
     $("#order-form").validate({
        rules:{
             name:{
@@ -225,7 +205,58 @@ $(document).ready(function() {
             phone:{
                 required: "Поле обязательное для заполнения",
             }
-       }
+       },
+       
+       submitHandler: function(form){
+            var data = $(form).serialize();     
+            $.ajax({
+                type: "POST", 
+                url: "/ajax/ordercall.php", 
+                data: data,
+                dataType: 'json',
+                success: function(data) {                   
+                    $('#ordercall-form').html("<h2>Заказ принят!</h3>Ждите звонка менеджера в ближайшее время.")
+                    
+                }
+            });         
+            return false
+        }   
+
+    });
+
+    $("#orderForm").validate({
+       rules:{
+            name:{
+                required: true
+            },
+            phone:{
+                required: true
+            }
+       },
+
+       messages:{
+            name:{
+                required: "Поле обязательное для заполнения",
+            },
+            phone:{
+                required: "Поле обязательное для заполнения",
+            }
+       },
+        submitHandler: function(form){
+            var data = $(form).serialize();     
+            $.ajax({
+                type: "POST", 
+                url: "/ajax/ordercard.php", 
+                data: data,
+                dataType: 'json',
+                success: function(data) {                   
+                    $('#ordercard-fields').hide(0)  
+                    $('#ordercard-text').html("<h2>Заказ принят!</h3>")
+                    
+                }
+            });         
+            return false
+        }   
     });
 
     $("#contact-form").validate({
@@ -247,6 +278,43 @@ $(document).ready(function() {
             }
        }
     });
+    
+    $("#order_training").validate({
+       rules:{
+            name:{
+                required: true
+            },
+            phone:{
+                required: true
+            }
+       },
+
+       messages:{
+            name:{
+                required: "Поле обязательное для заполнения",
+            },
+            phone:{
+                required: "Поле обязательное для заполнения",
+            }
+       },
+        submitHandler: function(form){
+            var data = $(form).serialize();     
+            $.ajax({
+                type: "POST", 
+                url: "/ajax/training_order.php", 
+                data: data,
+                dataType: 'json',
+                success: function(data) {
+                    $('#order_training-fields').hide(0) 
+                    $('#order_training-text').html("<h2>Вы записаны!</h3>")
+                    
+                }
+            });         
+            return false
+        }   
+    });
+
+    $('input[name="phone"]').mask("+7(999) 999-99-99",{placeholder:"_"});
 
 });
 
