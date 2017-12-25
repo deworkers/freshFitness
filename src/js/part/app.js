@@ -88,12 +88,20 @@ $(document).ready(function() {
     }
 
     var calendarList = new Swiper('.calendar-days', {
-        slidesPerView: 'auto',
+        slidesPerView: 7,
         spaceBetween: 1,
+        touchRatio: 0,
+        breakpoints: {
+            759: {
+                slidesPerView: 'auto',
+                touchRatio: 1,
+            }
+        },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+
     });
 
     $.extend(true, $.magnificPopup.defaults, {
@@ -318,3 +326,14 @@ $(document).ready(function() {
 
 });
 
+$(window).scroll(function() {
+    if ( $(window).width() > 1023 ) {
+        if ( $('html, body').scrollTop() > $('.scroll-pos').offset().top ) {
+            $('.calendar-filtr, .calendar-days-list').addClass('srcolled');
+            $('.scroll-pos').addClass('srcolled')
+        } else {
+            $('.calendar-filtr, .calendar-days-list').removeClass('srcolled');
+            $('.scroll-pos').removeClass('srcolled')
+        }
+    }
+});

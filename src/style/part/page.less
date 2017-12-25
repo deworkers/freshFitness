@@ -1380,6 +1380,22 @@ body {
     min-width: 420px;
 }
 
+.calendar-days-list {
+    display: flex;
+
+    .calendar-day-top {
+        width: 14.3%;
+        margin-right: 1px;
+    }
+
+    &.srcolled {
+        position: fixed;
+        z-index: 10;
+        top: 62px;
+        width: 960px;
+    }
+}
+
 .calendar-days {
     overflow: hidden;
 
@@ -1412,10 +1428,14 @@ body {
             transform: scale(0.5) rotate(180deg);
         }
     }
+
+    .calendar-day-top {
+        display: none;
+    }
 }
 
 .calendar-day {
-    width: 136.5px;
+    width: 14.3%;
 }
 
 .calendar-day-top {
@@ -2032,7 +2052,21 @@ body {
 
 .calendar-filtr {
     margin-bottom: 10px;
+    
+    &.srcolled {
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        max-width: 960px;
+    }
+
 } 
+
+.scroll-pos {
+    &.srcolled {
+        height: 162px;
+    }
+}
 
 .calendar-type {
     height: 52px;
